@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://53yl8jcj1ma2"
-path="res://.godot/imported/Piolho.fbx-5f60580cda991a3561399c3e25f1f8db.scn"
+uid="uid://0ur6fwaws14q"
+path="res://.godot/imported/Piolho (1).fbx-857c05d2e5312fa0328bc747b106b72b.scn"
 
 [deps]
 
-source_file="res://Jonh/Piolho.fbx"
-dest_files=["res://.godot/imported/Piolho.fbx-5f60580cda991a3561399c3e25f1f8db.scn"]
+source_file="res://Jonh/Piolho (1).fbx"
+dest_files=["res://.godot/imported/Piolho (1).fbx-857c05d2e5312fa0328bc747b106b72b.scn"]
 
 [params]
 

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c42g6s35wos3m"]
+
+[ext_resource type="PackedScene" uid="uid://d22mojhiu58ay" path="res://Jonh/Scenes/player_rigid_body.tscn" id="1_l8c2r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2i2r"]
+albedo_color = Color(0.52549, 0.364706, 0.164706, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fouqb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r1di1"]
+size = Vector3(47.3148, 1, 71.3643)
+
+[node name="TestWorld" type="Node3D"]
+
+[node name="PlayerRigidBody" parent="." instance=ExtResource("1_l8c2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.01108, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.930941, 0.365169, 0, -0.365169, 0.930941, 0, 7.19649, 15.3883)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999985, 0.00502689, 0.00224567, -0.0047723, 0.588003, 0.808845, 0.00274552, -0.808843, 0.588018, 0, 6.04242, 0)
+light_energy = 1.825
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(46.9829, 0, 0, 0, 1, 0, 0, 0, 70.6153, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_m2i2r")
+mesh = SubResource("BoxMesh_fouqb")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_r1di1")
