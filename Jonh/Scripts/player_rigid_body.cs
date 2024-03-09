@@ -6,7 +6,7 @@ public partial class player_rigid_body : RigidBody3D
 {
 	int speed = 1000;
 
-	Vector3 velocity;
+	Vector3 velocity, lastFrameposition;
 	Vector3 snapVector;
 
 	SpringArm3D springArm;
@@ -36,5 +36,11 @@ public partial class player_rigid_body : RigidBody3D
 		
 		
 		ApplyCentralForce(velocity * (float)delta);
+    }
+
+    public override void _Process(double delta)
+    {
+        springArm.Translate(Position - lastFrameposition);
+		lastFrameposition = Position;
     }
 }
