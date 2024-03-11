@@ -4,12 +4,13 @@ using System.Diagnostics;
 
 public partial class player_rigid_body : RigidBody3D
 {
-	int speed = 1000;
+	int speed = 5000;
 
 	Vector3 velocity, lastFrameposition;
 	Vector3 snapVector;
 
 	SpringArm3D springArm;
+	Node3D springParent;
 
 
 
@@ -17,6 +18,7 @@ public partial class player_rigid_body : RigidBody3D
 	public override void _Ready()
 	{
 		springArm = GetNode<SpringArm3D>("SpringArm3D");
+		springParent = GetNode<Node3D>("SpringParent");
 	}
 
     public override void _PhysicsProcess(double delta)
@@ -40,7 +42,10 @@ public partial class player_rigid_body : RigidBody3D
 
     public override void _Process(double delta)
     {
-        springArm.Translate(Position - lastFrameposition);
-		lastFrameposition = Position;
+        springArm.Translate(springArm.Position-springParent.Position);
+
+
+		//springArm.Translate(-1*(lastFrameposition-Position));
+		//lastFrameposition = Position;
     }
 }

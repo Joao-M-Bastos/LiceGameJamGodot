@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://d22mojhiu58ay"]
+[gd_scene load_steps=6 format=3 uid="uid://d22mojhiu58ay"]
 
 [ext_resource type="Script" path="res://Jonh/Scripts/player_rigid_body.cs" id="1_0whxg"]
 [ext_resource type="PackedScene" uid="uid://0ur6fwaws14q" path="res://Jonh/Piolho (1).fbx" id="2_aqrsn"]
+[ext_resource type="Script" path="res://Jonh/Scenes/SpringArm3D.cs" id="3_u8022"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_flpcf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yrnb5"]
 
 [node name="PlayerRigidBody" type="RigidBody3D"]
 axis_lock_angular_x = true
@@ -18,4 +21,14 @@ shape = SubResource("CapsuleShape3D_flpcf")
 transform = Transform3D(-4.5897e-09, 0, 0.105, 0, 0.105, 0, -0.105, 0, -4.5897e-09, 0, -0.898729, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.87045, 0.492256, 0, -0.492256, 0.87045, 0, 1.118, 2.43)
+transform = Transform3D(1, 0, 0, 0, 0.87045, 0.492256, 0, -0.492256, 0.87045, 0, 2, 0)
+shape = SubResource("SphereShape3D_yrnb5")
+spring_length = 5.0
+margin = 0.2
+script = ExtResource("3_u8022")
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+current = true
+
+[node name="SpringParent" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

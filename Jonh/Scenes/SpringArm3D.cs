@@ -14,12 +14,20 @@ public partial class SpringArm3D : Godot.SpringArm3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		//springArm.Translate(springArm.Position-springParent.Position);
 	}
 
     public override void _UnhandledInput(InputEvent _event)
     {
+		Vector3 rotation = RotationDegrees;
         if(_event is InputEventMouseMotion motion){
-			RotationDegrees.X -= motion.Relative.Y;
+			rotation.X -= motion.Relative.Y * mouseSensitivity;
+			rotation.X = Math.Clamp(rotation.X, -90, 30);
+
+			rotation.Y -= motion.Relative.X * mouseSensitivity;
+			rotation.Y = Mathf.Wrap(rotation.Y, 0, 360);
 		}
+
+		RotationDegrees = rotation;
     }
 }

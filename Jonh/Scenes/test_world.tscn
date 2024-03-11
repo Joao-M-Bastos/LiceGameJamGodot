@@ -15,9 +15,6 @@ size = Vector3(47.3148, 1, 71.3643)
 [node name="PlayerRigidBody" parent="." instance=ExtResource("1_l8c2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.01108, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.930941, 0.365169, 0, -0.365169, 0.930941, 0, 7.19649, 15.3883)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.999985, 0.00502689, 0.00224567, -0.0047723, 0.588003, 0.808845, 0.00274552, -0.808843, 0.588018, 0, 6.04242, 0)
 light_energy = 1.825
