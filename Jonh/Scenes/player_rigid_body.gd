@@ -29,7 +29,7 @@ func _physics_process(delta):
 	
 	apply_central_force(velocity * delta);
 	
-	if velocity.length() > 0.2:
+	if(velocity.length() > 0.2):
 		var lookDirection = Vector2(velocity.z, velocity.x)
 		model.rotation.y = lookDirection.angle()
 		
@@ -38,7 +38,7 @@ func _physics_process(delta):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	springArm = get_node("SpringArm3D")
-	model = get_node("Node3D")
+	model = get_node("ModeloPiolho")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

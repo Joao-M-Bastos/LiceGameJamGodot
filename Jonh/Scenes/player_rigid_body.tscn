@@ -9,13 +9,14 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_yrnb5"]
 
 [node name="PlayerRigidBody" type="RigidBody3D"]
-axis_lock_angular_x = true
-axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_0ny2x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_7r3vx")
+
+[node name="ModeloPiolho" parent="." instance=ExtResource("2_aqrsn")]
+transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 0, -0.898729, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.87045, 0.492256, 0, -0.492256, 0.87045, 0, 2, 0)
@@ -30,9 +31,3 @@ current = true
 
 [node name="SpringParent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="ModeloPiolho" parent="Node3D" instance=ExtResource("2_aqrsn")]
-transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 0, -0.898729, 0)
-top_level = true
