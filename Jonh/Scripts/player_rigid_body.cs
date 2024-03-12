@@ -21,10 +21,10 @@ public partial class player_rigid_body : RigidBody3D
 		springParent = GetNode<Node3D>("SpringParent");
 	}
 
-    public override void _PhysicsProcess(double delta)
-    {
+	public override void _PhysicsProcess(double delta)
+	{
 		Vector3 direction = Vector3.Zero;
-       	direction.X = Input.GetAxis("move_left", "move_right");
+	   	direction.X = Input.GetAxis("move_left", "move_right");
 		direction.Z = Input.GetAxis("move_forward", "move_back");
 
 		if(direction == Vector3.Zero){
@@ -38,14 +38,14 @@ public partial class player_rigid_body : RigidBody3D
 		
 		
 		ApplyCentralForce(velocity * (float)delta);
-    }
+	}
 
-    public override void _Process(double delta)
-    {
-        springArm.Translate(springArm.Position-springParent.Position);
+	public override void _Process(double delta)
+	{
+		//springArm.Translate(springArm.Position-springParent.Position);
 
 
 		//springArm.Translate(-1*(lastFrameposition-Position));
 		//lastFrameposition = Position;
-    }
+	}
 }

@@ -8,7 +8,7 @@ albedo_color = Color(0.52549, 0.364706, 0.164706, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_fouqb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r1di1"]
-size = Vector3(204.677, 1, 178.503)
+size = Vector3(84.1349, 1, 128.185)
 
 [node name="TestWorld" type="Node3D"]
 
@@ -22,7 +22,7 @@ light_energy = 1.825
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(204.802, 0, 0, 0, 1.39215, 0, 0, 0, 178.244, 0, 0, 0)
+transform = Transform3D(83.8339, 0, 0, 0, 1, 0, 0, 0, 128.035, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_m2i2r")
 mesh = SubResource("BoxMesh_fouqb")
 skeleton = NodePath("")
