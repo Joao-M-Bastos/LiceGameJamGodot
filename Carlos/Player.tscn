@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bw4o84e363asr"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_rk6nj"]
+[ext_resource type="Script" path="res://Carlos/Player.gd" id="1_q6jwm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_nm4lr"]
 
@@ -11,7 +11,7 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 top_level = true
 lock_rotation = true
 linear_damp = 1.0
-script = ExtResource("1_rk6nj")
+script = ExtResource("1_q6jwm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
