@@ -1,6 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c42g6s35wos3m"]
-
-[ext_resource type="PackedScene" uid="uid://d22mojhiu58ay" path="res://Jonh/Scenes/player_rigid_body.tscn" id="1_l8c2r"]
+[gd_scene load_steps=4 format=3 uid="uid://c42g6s35wos3m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2i2r"]
 albedo_color = Color(0.52549, 0.364706, 0.164706, 1)
@@ -11,9 +9,6 @@ albedo_color = Color(0.52549, 0.364706, 0.164706, 1)
 size = Vector3(204.677, 1, 178.503)
 
 [node name="TestWorld" type="Node3D"]
-
-[node name="PlayerRigidBody" parent="." instance=ExtResource("1_l8c2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.01108, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.999985, 0.00502689, 0.00224567, -0.0047723, 0.588003, 0.808845, 0.00274552, -0.808843, 0.588018, 0, 6.04242, 0)
