@@ -2,11 +2,11 @@ extends Node3D
 class_name GameManager
 
 static var blood = 100
-var bloodText
+static var bloodText
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	bloodText = %BloodLabel
+	bloodText = get_node("Camera3D/BloodLabel")
 	pass # Replace with function body.
 
 
@@ -16,5 +16,5 @@ func _process(delta):
 
 static func GetBlood(value):
 	blood+=value
-	#bloodText = 
+	bloodText.text = str(blood)
 	pass
