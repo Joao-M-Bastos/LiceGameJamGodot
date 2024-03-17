@@ -30,9 +30,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_r1di1")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.773022, 0.63438, 0, -0.63438, 0.773022, -3.8147e-06, 7.05192, 1.1619)
-
 [node name="Node3D" parent="." instance=ExtResource("1_b76xv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.2801, -13.5581)
 
@@ -44,3 +41,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3192, 1.20787, -6.95733)
 
 [node name="GAMEMANAGER" type="Node3D" parent="."]
 script = ExtResource("4_miyx2")
+
+[node name="Camera3D" type="Camera3D" parent="GAMEMANAGER"]
+transform = Transform3D(1, 0, 0, 0, 0.773022, 0.63438, 0, -0.63438, 0.773022, -3.8147e-06, 7.05192, 1.1619)
+
+[node name="BloodLabel" type="RichTextLabel" parent="GAMEMANAGER/Camera3D"]
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 0.025
+anchor_right = 0.015
+anchor_bottom = 0.025
+offset_left = 0.199999
+offset_right = 482.2
+offset_bottom = 195.0
+theme_override_font_sizes/normal_font_size = 100
+fit_content = true
