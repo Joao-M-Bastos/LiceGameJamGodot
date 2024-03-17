@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Lice Game Jam Godot"
-run/main_scene="res://Carlos/Level.tscn"
+run/main_scene="res://Carlos/Scenes/Menu.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,127 @@
+[gd_scene load_steps=4 format=3 uid="uid://d38ugtlu5tk8d"]
+
+[ext_resource type="Script" path="res://Carlos/Scripts/Menu.gd" id="1_yfraj"]
+
+[sub_resource type="FontFile" id="FontFile_y1xec"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/100/0 = Vector2(0, 0)
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/100/0 = Vector2(0, 0)
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+cache/0/100/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/100/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/100/0/kerning_overrides/100/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_grwnr"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yfraj")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176471, 0.176471, 0.176471, 1)
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.314
+anchor_top = 0.17
+anchor_right = 0.686
+anchor_bottom = 0.83
+offset_left = 0.619995
+offset_top = -0.100006
+offset_right = -0.620117
+offset_bottom = 0.0999756
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="MainContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_y1xec")
+theme_override_font_sizes/font_size = 100
+text = "Piolhers"
+horizontal_alignment = 1
+
+[node name="HContainer" type="HBoxContainer" parent="MainContainer/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_bottom = 803.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VContainer" type="VBoxContainer" parent="MainContainer/Title/HContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Play" type="Button" parent="MainContainer/Title/HContainer/VContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_grwnr")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+flat = true
+
+[node name="Controls" type="Button" parent="MainContainer/Title/HContainer/VContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_grwnr")
+theme_override_font_sizes/font_size = 50
+text = "Controls
+"
+flat = true
+
+[node name="Quit" type="Button" parent="MainContainer/Title/HContainer/VContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_grwnr")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+flat = true
+
+[connection signal="pressed" from="MainContainer/Title/HContainer/VContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MainContainer/Title/HContainer/VContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MainContainer/Title/HContainer/VContainer/Quit" to="." method="_on_quit_pressed"]
