@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c73sggnbcyh15"]
+
+[ext_resource type="Script" path="res://Jonh/Scripts/enemy_spawner.gd" id="1_5rm2w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mwojw"]
+
+[node name="EnemySpawner" type="Node3D"]
+script = ExtResource("1_5rm2w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_mwojw")
+
+[node name="GenerationPoint" type="Node3D" parent="."]

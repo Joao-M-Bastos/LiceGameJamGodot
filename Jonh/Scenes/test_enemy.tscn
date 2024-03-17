@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgmhh3b6ydxaf"]
+
+[ext_resource type="Script" path="res://Jonh/Scripts/test_enemy.gd" id="1_ofjxl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxnce"]
+albedo_color = Color(0.317647, 0.196078, 0.2, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wlh3f"]
+
+[node name="testEnemy" type="Node3D"]
+script = ExtResource("1_ofjxl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_uxnce")
+mesh = SubResource("CapsuleMesh_wlh3f")
