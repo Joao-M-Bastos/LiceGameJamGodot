@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://rug0bu7lvrhl"]
+[gd_scene load_steps=3 format=3 uid="uid://rug0bu7lvrhl"]
+
+[ext_resource type="Script" path="res://Jonh/Scripts/lice_generator.gd" id="1_66f8o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hg2q4"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_66f8o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_hg2q4")
 
 [node name="GenerationPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.90262)

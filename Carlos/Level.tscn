@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bw4o84e363asr" path="res://Carlos/Player.tscn" id="1_mncty"]
 [ext_resource type="Script" path="res://Carlos/Level.gd" id="1_w4mh4"]
-[ext_resource type="PackedScene" uid="uid://djgh37onr8kyq" path="res://Carlos/Enemy.tscn" id="3_rx43s"]
+[ext_resource type="PackedScene" path="res://Carlos/Enemy.tscn" id="3_rx43s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_05hm2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

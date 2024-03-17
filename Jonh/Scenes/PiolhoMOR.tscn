@@ -2,20 +2,17 @@
 
 [ext_resource type="Script" path="res://Jonh/Scripts/PiolhoMOR.gd" id="1_5a6ve"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0l2lk"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_1vw2b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0l2lk"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_5a6ve")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_1vw2b")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_0l2lk")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_1vw2b")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.33884)

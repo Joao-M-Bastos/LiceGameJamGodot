@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c42g6s35wos3m"]
+[gd_scene load_steps=6 format=3 uid="uid://c42g6s35wos3m"]
 
 [ext_resource type="PackedScene" uid="uid://c4aas4prlxqbw" path="res://Jonh/Scenes/PiolhoMOR.tscn" id="1_b76xv"]
+[ext_resource type="PackedScene" uid="uid://rug0bu7lvrhl" path="res://Jonh/Scenes/lice_generator.tscn" id="2_tkpbx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2i2r"]
 albedo_color = Color(0.52549, 0.364706, 0.164706, 1)
@@ -28,7 +29,10 @@ skeleton = NodePath("")
 shape = SubResource("BoxShape3D_r1di1")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.773022, 0.63438, 0, -0.63438, 0.773022, 0, 20.9678, 29.8197)
+transform = Transform3D(1, 0, 0, 0, 0.773022, 0.63438, 0, -0.63438, 0.773022, -3.8147e-06, 7.05192, 1.1619)
 
 [node name="Node3D" parent="." instance=ExtResource("1_b76xv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -19.8541)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.2801, -13.5581)
+
+[node name="Node3D2" parent="." instance=ExtResource("2_tkpbx")]
+transform = Transform3D(0.132222, 0, -0.99122, 0, 1, 0, 0.99122, 0, 0.132222, 4.93139, 1.22376, -16.6303)

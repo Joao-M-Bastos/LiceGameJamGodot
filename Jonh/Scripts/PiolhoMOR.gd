@@ -6,9 +6,7 @@ var growConstantValue = 0.2
 func _ready():
 	pass # Replace with function body.
 
+func _physics_process(delta):
+	get_node("MeshInstance3D").scale += Vector3(0,growConstantValue * delta,0)
+	get_node("MeshInstance3D").position += Vector3(0,growConstantValue/2 * delta,0)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	scale += Vector3(0,growConstantValue * delta,0)
-	get_node("MeshInstance3D").translate(Vector3(0,growConstantValue/4 * delta,0))
-	pass

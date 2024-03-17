@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvrxq221jqwkw"]
+
+[ext_resource type="Script" path="res://Jonh/Scripts/testMiner.gd" id="1_4klmo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tyuom"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_4klmo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_tyuom")
