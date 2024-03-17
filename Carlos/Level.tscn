@@ -1,12 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqr3uqhpucjr5"]
+[gd_scene load_steps=10 format=3 uid="uid://bqr3uqhpucjr5"]
 
 [ext_resource type="PackedScene" uid="uid://bw4o84e363asr" path="res://Carlos/Player.tscn" id="1_mncty"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_tarsv"]
-size = Vector2(10, 10)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8p5oe"]
-data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+[ext_resource type="Script" path="res://Carlos/Level.gd" id="1_w4mh4"]
+[ext_resource type="PackedScene" uid="uid://djgh37onr8kyq" path="res://Carlos/Enemy.tscn" id="3_rx43s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_05hm2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,33 +17,53 @@ sky = SubResource("Sky_jh6nm")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_icu37"]
+vertices = PackedVector3Array(-8.44712, 2.75, -4.5, -8.44712, 2.75, 4.5, -1.94712, 0.5, 4.5, -1.94712, 0.5, -4.5, -4.54712, 0.5, -4.5, -4.54712, 0.5, 4.5, 4.55288, 0.5, -4.5, -1.94712, 0.5, -4.5, -1.94712, 0.5, 4.5, 4.55288, 0.5, 4.5)
+polygons = [PackedInt32Array(3, 2, 4), PackedInt32Array(4, 2, 5), PackedInt32Array(4, 5, 1), PackedInt32Array(4, 1, 0), PackedInt32Array(9, 8, 6), PackedInt32Array(6, 8, 7)]
+agent_height = 0.05
+agent_max_climb = 0.05
 
-[node name="Rampa" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -4.617, 0, 0)
-mesh = SubResource("PlaneMesh_tarsv")
-skeleton = NodePath("../Ground")
+[sub_resource type="PlaneMesh" id="PlaneMesh_tarsv"]
+size = Vector2(10, 10)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rampa"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8p5oe"]
+data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rampa/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_8p5oe")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_iph6v")
+[node name="World" type="Node3D"]
+script = ExtResource("1_w4mh4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Ground" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_tarsv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_8p5oe")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iph6v")
 
 [node name="Player" parent="." instance=ExtResource("1_mncty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07894, 0)
 linear_damp = 1.5
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_icu37")
+
+[node name="Rampa" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -4.617, 0, 0)
+mesh = SubResource("PlaneMesh_tarsv")
+skeleton = NodePath("../Chao")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Rampa"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Rampa/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8p5oe")
+
+[node name="Chao" type="MeshInstance3D" parent="NavigationRegion3D"]
+mesh = SubResource("PlaneMesh_tarsv")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Chao"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Chao/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8p5oe")
+
+[node name="Enemy" parent="." instance=ExtResource("3_rx43s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 3)
