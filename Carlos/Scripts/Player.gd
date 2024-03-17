@@ -10,7 +10,7 @@ var l_free = true
 #Transformando o path em variavel pra reduzir o tamanho do codigo
 @onready var twist_pivot := $TwistPivot
 @onready var pitch_pivot := $TwistPivot/PitchPivot
-@onready var player_body := $Player
+@onready var player_body := preload("res://Carlos/Scenes/Player.tscn")
 
 # Roda ao iniciar
 func _ready():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dylgydp2qft57"]
+[gd_scene load_steps=6 format=3 uid="uid://bsu7xon5fhbn2"]
 
 [ext_resource type="PackedScene" uid="uid://b8yto6twl81s5" path="res://Carlos/Assets/PocaSangue_PiolhoMor (1).fbx" id="1_gy54f"]
-[ext_resource type="PackedScene" uid="uid://dlt34xdpweuss" path="res://Carlos/Scenes/Interactable.tscn" id="2_5bxs7"]
+[ext_resource type="PackedScene" uid="uid://cyvxi57mfmh4c" path="res://Carlos/Scenes/Interactable.tscn" id="2_5bxs7"]
+[ext_resource type="Script" path="res://Carlos/Scripts/spot_sangue.gd" id="2_rruag"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ar3t6"]
 size = Vector3(4.5, 4.5, 4.5)
@@ -10,13 +11,18 @@ size = Vector3(4.5, 4.5, 4.5)
 size = Vector3(3.94169, 1.74469, 4.05321)
 
 [node name="SpotSangue" instance=ExtResource("1_gy54f")]
+script = ExtResource("2_rruag")
 
 [node name="Interactable" parent="." index="1" instance=ExtResource("2_5bxs7")]
 
 [node name="CollisionShape3D" parent="Interactable" index="0"]
 shape = SubResource("BoxShape3D_ar3t6")
 
+[node name="GenerationPoint" type="Node3D" parent="Interactable" index="1"]
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+collision_layer = 3
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.787971, 0)

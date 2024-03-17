@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bqr3uqhpucjr5"]
+[gd_scene load_steps=16 format=3 uid="uid://bqr3uqhpucjr5"]
 
 [ext_resource type="Script" path="res://Carlos/Scripts/Level.gd" id="1_4v4e8"]
 [ext_resource type="PackedScene" uid="uid://bw4o84e363asr" path="res://Carlos/Scenes/Player.tscn" id="2_u1cgd"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://q8wy1t7ffoen" path="res://Carlos/Assets/Bunda_PiolhoMor.fbx" id="4_3fp74"]
 [ext_resource type="ArrayMesh" uid="uid://dp1j2cxoa7mcw" path="res://Carlos/Assets/obj_CIENTISTA.obj" id="4_74m0j"]
 [ext_resource type="PackedScene" uid="uid://bs8k0ohhntgnx" path="res://Carlos/Scenes/Enemy.tscn" id="5_sqwcn"]
+[ext_resource type="PackedScene" path="res://Carlos/Scripts/spot_sangue.tscn" id="9_2qtln"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_05hm2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -83,3 +84,6 @@ shape = SubResource("CylinderShape3D_2mjku")
 
 [node name="Enemy" parent="." instance=ExtResource("5_sqwcn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.48705, 20.5902, -0.666824)
+
+[node name="SpotSangue" parent="." instance=ExtResource("9_2qtln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8642, 18.8283, 18.795)

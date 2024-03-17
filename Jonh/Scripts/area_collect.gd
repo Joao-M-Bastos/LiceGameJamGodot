@@ -13,5 +13,5 @@ func _EnterColletArea():
 func _ExitColletArea():
 	isOccuped = false
 	
-func _PutLice(mineiro)
+#func _PutLice(mineiro)
 
