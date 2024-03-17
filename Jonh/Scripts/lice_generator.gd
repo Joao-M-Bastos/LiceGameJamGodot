@@ -1,7 +1,7 @@
 extends Node3D
 
 ##Pega outra cena
-var minerLice = preload("res://Jonh/Scenes/testMiner.tscn")
+var minerLice = preload("res://Jonh/Scenes/mineiro_la_de_minas.tscn")
 var warriorLice = preload("res://Jonh/Scenes/test_warrior.tscn")
 
 # Called when the node enters the scene tree for the first time.

@@ -1,7 +1,5 @@
 extends Node3D
 
-var gameManager = preload("res://Jonh/Scenes/GAMEMANAGER.gd")
-
 var isOccuped
 
 # Called when the node enters the scene tree for the first time.
@@ -14,3 +12,6 @@ func _EnterColletArea():
 
 func _ExitColletArea():
 	isOccuped = false
+	
+func _PutLice(mineiro)
+

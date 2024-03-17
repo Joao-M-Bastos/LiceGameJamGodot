@@ -15,6 +15,6 @@ func _process(delta):
 	pass
 
 static func GetBlood(value):
-	blood+=value
+	blood+=int(value)
 	bloodText.text = str(blood)
 	pass

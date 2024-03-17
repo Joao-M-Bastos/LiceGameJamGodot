@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw30bmksdm1mt"]
+
+[ext_resource type="Script" path="res://Jonh/Scripts/mineiro_la_de_minas.gd" id="1_x1rxu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1b35"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_knx6y"]
+
+[node name="MineiroLaDeMinas" type="Node3D"]
+script = ExtResource("1_x1rxu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_d1b35")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_knx6y")

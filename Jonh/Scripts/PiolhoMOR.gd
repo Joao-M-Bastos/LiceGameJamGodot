@@ -1,15 +1,18 @@
 extends Node3D
 
-var gameManager = preload("res://Jonh/Scenes/GAMEMANAGER.gd")
-
 var growConstantValue = 0.2
+var collectCooldown = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	gameManager.GetBlood(-1)
+	if(collectCooldown < 1):
+		collectCooldown += delta
+	else:
+		GameManager.GetBlood(-1)
+		collectCooldown = 0
 	pass
 
 func _physics_process(delta):
