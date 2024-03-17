@@ -4,12 +4,13 @@ var mouse_sensitivity := 0.002
 var twist_input := 0.0
 var pitch_input := 0.0
 
+var r_free = true
+var l_free = true
+
 #Transformando o path em variavel pra reduzir o tamanho do codigo
 @onready var twist_pivot := $TwistPivot
 @onready var pitch_pivot := $TwistPivot/PitchPivot
 @onready var player_body := $Player
-
-
 
 # Roda ao iniciar
 func _ready():
