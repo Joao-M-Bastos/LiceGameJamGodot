@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dp1j2cxoa7mcw"
+path="res://.godot/imported/obj_CIENTISTA.obj-66db38ad60d39bb067271c328de5b480.mesh"
+
+[deps]
+
+files=["res://.godot/imported/obj_CIENTISTA.obj-66db38ad60d39bb067271c328de5b480.mesh"]
+
+source_file="res://Carlos/Assets/obj_CIENTISTA.obj"
+dest_files=["res://.godot/imported/obj_CIENTISTA.obj-66db38ad60d39bb067271c328de5b480.mesh", "res://.godot/imported/obj_CIENTISTA.obj-66db38ad60d39bb067271c328de5b480.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
