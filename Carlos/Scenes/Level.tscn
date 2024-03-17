@@ -83,7 +83,6 @@ shape = SubResource("BoxShape3D_g8w5v")
 transform = Transform3D(300, 0, 0, 0, 300, 0, 0, 0, 300, 3.78758, -643.751, 6.99727)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/CenarioCabecaLampada"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 mesh = ExtResource("4_74m0j")
 
